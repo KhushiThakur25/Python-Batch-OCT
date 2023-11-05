@@ -1,0 +1,72 @@
+Find a peak element which is larger than its neighbour:
+
+Peak element is the element which have greater value then their neighbours value.
+
+Example:
+Input: array[] = {60,10,55,12,46,86,31}
+Output: 55 or 86
+Explanation: The element 55 has neighbors 10 and 12 both of them are less than 55, similarly 86 has neighbors 46 and 31.
+
+
+                             Method 1
+# We can solve this problem by using Linear Search algorithm:
+
+There are following steps to implement this approach:
+
+
+1. Traverse the array from the second index to the
+   second last index i.e. 1 to N – 1.
+2. If for an element array[i] is greater than both its neighbors,
+   i.e., array[i] > =array[i-1]  and array[i] > =array[i+1] , then
+   print that element and terminate.
+3. If peak element not found ,then return -1.
+
+class PeakElement{
+	static int findPeak(int[] nums) {
+    	for (int i = 1; i < nums.length - 1; i++) {
+        if (nums[i] >= nums[i - 1] && nums[i] >= nums[i + 1]) {
+            return nums[i];
+        	}
+   	       }
+    	return -1; // No peak found
+	}
+
+	public static void main(String[] args) {
+	int nums[] = { 1, 3, 20, 4, 1, 0 };
+	System.out.print("Peak point is " + findPeak(nums));
+        }
+
+	}
+
+Time Complexity of this approach is O(n), where n is the number of elements in the array.
+This is the simplest approach to find the peak element but not the optimized.
+
+
+
+                        Method 2
+# We can also solve this problem by using Binary Search algorithm:
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+file handling
+-read
+-write
+
+2types of files
+-text files
+-binary files(bytes)
+
+3 steps to perform file handling
+- open file
+- read/write
+- close
+
+Modes
+
+-text
+ 	-r , w, a, x ()
+-bytes
+	-rb , wb, ab, xb
+
+
